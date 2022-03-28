@@ -62,5 +62,24 @@ const Author = () => {
 
 - So we created some basic hardcoded react components. Now if we want to add css in out react project how can we do it?
 - we can create a basic index.css file and import in react.
-- for small project this system works fine but for bigger project we will use css-in-js
+- for small project this system works fine but for bigger project we will use css-in-js / utility class / bootstrap /tailwind
+
+** power of jsx**
+
+- we can use any js functionality
+- using {}
+- using ``
+
+## Props
+
+- using props we can pass values to different function
+- which gives us the reusability power
+- can add dynamic features
+- props are immutable
+- unidirectional parent to child
+- careful about prop drilling
+- how can we pass prop from child to parent?
+- we pass function prop from parents for passing child to parent
+- props directly used or we can destruct the specific fields
+- props - children - anything passed between open and closed tags of components--- it passed like props.children and destruct naming children
 -
