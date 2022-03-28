@@ -1,19 +1,33 @@
 import ReactDom from "react-dom";
 import "./index.css";
 const BookList = () => {
+  const books = [
+    {
+      title: "Atomic Habits",
+      author: "James Clear",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL200_SR200,200_.jpg",
+    },
+
+    {
+      title: "Nana Loves you more",
+      author: "Jimmy Fallon",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/816Li6IWaAS._AC_UL200_SR200,200_.jpg",
+    },
+  ];
   return (
     <section className="booklist">
-      <Book
-        title="Atomic Habits"
-        author="James Clear"
-        image="https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL200_SR200
-      ,200_.jpg"
-      />
-      <Book
-        title="Nana Loves you more"
-        author="Jimmy Fallon"
-        image="https://images-na.ssl-images-amazon.com/images/I/816Li6IWaAS._AC_UL200_SR200,200_.jpg"
-      />
+      {books.map((book) => {
+        return (
+          <Book
+            key={book.title}
+            title={book.title}
+            image={book.image}
+            author={book.author}
+          />
+        );
+      })}
     </section>
   );
 };

@@ -82,4 +82,6 @@ const Author = () => {
 - we pass function prop from parents for passing child to parent
 - props directly used or we can destruct the specific fields
 - props - children - anything passed between open and closed tags of components--- it passed like props.children and destruct naming children
+- simple list - we will use .map() a lot while accessing lists
+- be careful giving unique key .. its important for react virtual dom ecosystem for better performance
 -
