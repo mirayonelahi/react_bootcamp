@@ -19,14 +19,7 @@ const BookList = () => {
   return (
     <section className="booklist">
       {books.map((book) => {
-        return (
-          <Book
-            key={book.title}
-            title={book.title}
-            image={book.image}
-            author={book.author}
-          />
-        );
+        return <Book key={book.title} {...book} />;
       })}
     </section>
   );

@@ -84,4 +84,32 @@ const Author = () => {
 - props - children - anything passed between open and closed tags of components--- it passed like props.children and destruct naming children
 - simple list - we will use .map() a lot while accessing lists
 - be careful giving unique key .. its important for react virtual dom ecosystem for better performance
--
+- using .map() and also we are passing each attribute as a prop separately.
+- we can use rest/spread operator here to make it more clean and easy to write
+
+from
+
+```jsx
+<section className="booklist">
+  {books.map((book) => {
+    return (
+      <Book
+        key={book.title}
+        title={book.title}
+        image={book.image}
+        author={book.author}
+      />
+    );
+  })}
+</section>
+```
+
+to ->
+
+```jsx
+<section className="booklist">
+  {books.map((book) => {
+    return <Book key={book.title} {...book} />;
+  })}
+</section>
+```
