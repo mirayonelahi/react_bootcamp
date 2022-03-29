@@ -104,7 +104,7 @@ from
 </section>
 ```
 
-to ->
+to
 
 ```jsx
 <section className="booklist">
@@ -112,4 +112,25 @@ to ->
     return <Book key={book.title} {...book} />;
   })}
 </section>
+```
+
+# lets play with events
+
+- in react we can play with different types of events
+- mouse event, keyboard event and different types of events
+- we will use a lot of onClick and onChange
+- we can create extra helper method or pass event directly
+- we will be using `e.target` a lot when working with event
+
+```jsx
+// way 1
+onClick={methodName}
+
+// way 2
+onClick={()=>{methodName(val)} }
+
+// don't do this
+onClick = {methodName(val)}
+
+// we avoid the last method as its already invoked the event/function
 ```

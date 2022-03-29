@@ -15,6 +15,12 @@ const BookList = () => {
       image:
         "https://images-na.ssl-images-amazon.com/images/I/816Li6IWaAS._AC_UL200_SR200,200_.jpg",
     },
+    {
+      title: "Ayon the man",
+      author: "ayon",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/816Li6IWaAS._AC_UL200_SR200,200_.jpg",
+    },
   ];
   return (
     <section className="booklist">
