@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
 const ErrorExample = () => {
-  const val = useState(1);
-  console.log(val);
-  const handleChange = () => {};
+  const [title, settitle] = useState("world");
+  const handleChange = () => {
+    settitle("new world");
+  };
   return (
     <>
-      <h2>Hello </h2>
+      <h2>Hello {title} </h2>
       <button className="btn" onClick={handleChange}>
         change title
       </button>

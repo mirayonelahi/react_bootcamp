@@ -44,6 +44,48 @@ console.log(val);
 - from the code above we can see that it returns a array of objects
 - we can destruct those values
 - `const [value, setValue] = useState(1)`
+- some rules of using hook
+  - we always need to define this in top level
+  - don't init it in side loops/ any other hooks
+  - can't call conditionally
+  - start with use
+  - components needs to uppercase pascel case
+  - hooks should be inside func component
+
+```jsx
+const UseStateArray = () => {
+  const [people, setPeople] = useState(data);
+  const handleClick = () => {
+    setPeople((prev) => [...prev, { id: 8, name: "ayon" }]);
+  };
+  const handleDelete = (id) => {
+    setPeople((prev) =>
+      prev.filter((val) => {
+        return val.id != id;
+      })
+    );
+  };
+  return (
+    <>
+      <h2>useState array example</h2>
+      {people.map((p) => {
+        return (
+          <div className="item" key={p.id}>
+            <h4> {p.name}</h4>
+            <button onClick={() => handleDelete(p.id)}>Click</button>
+          </div>
+        );
+      })}
+      <button className="btn" onClick={handleClick}>
+        Click outside
+      </button>
+    </>
+  );
+};
+```
+
+- in the above example using usestate we add and delete values and showed in window real time
+-
 
 1. Birthday Reminder
 
