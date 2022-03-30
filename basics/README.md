@@ -134,3 +134,9 @@ onClick = {methodName(val)}
 
 // we avoid the last method as its already invoked the event/function
 ```
+
+import export in React
+
+- two types export
+  - default type and we import this without bracket and can be named anything.
+  - named typed export where import should be done by using `{ exactNaming }` and should be imported using exact naming
