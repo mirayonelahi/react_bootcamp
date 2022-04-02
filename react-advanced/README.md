@@ -144,7 +144,22 @@ const UseEffectBasics = () => {
 -
 
 1. Tours
+
+- we fetch some tour info using fetch
+- first create 2 states for data and loading page
+- create a useeffect to run fetchdata function
+- in the fetchdata function we use assync await and fetch to get the data
+- then what data we fetched we add it to data state
+- then we pass data to tours component
+- in tours we map the data and pass the data to tour component
+- we destructure and show data accordingly
+- we need to pass data from child to parent for deleting single list
+- for that we pass function from parent to child and using that we pass from child to parent
+
 2. Reviews
+
+-
+
 3. Accordion
 4. Menu
 5. Tabs
