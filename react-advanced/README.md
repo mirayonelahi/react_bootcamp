@@ -138,6 +138,9 @@ const UseEffectBasics = () => {
 - whenever any uffeffect closes it runs clean upfunction
 - when we have conditional rendering where multiple conponents will be there and handling showing/hiding . we will need to handle all the memory leak or unnecessary rendering using clean up function
 - now lets fetch some data.
+- some issue using assync/await inside useEffect dirrectly .
+- as assync/await returns a promise
+- so we create a seperate function for that
 -
 
 1. Tours
@@ -148,6 +151,9 @@ const UseEffectBasics = () => {
 6. Slider
 
 #### Forms
+
+- let's make a basic form in react
+- 2 input field and one submit
 
 8. Lorem Ipsum Generator
 9. Color Shades Generator
