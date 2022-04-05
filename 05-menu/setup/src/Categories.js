@@ -1,12 +1,20 @@
 import React from "react";
 
-const Categories = ({ item }) => {
-  const uniqueCategories = [...new Set(item.map((a) => a.category))];
-
+const Categories = ({ categories, filterItem }) => {
   return (
     <>
-      {uniqueCategories.map((x) => {
-        return <h1>{x}</h1>;
+      {categories.map((x, index) => {
+        return (
+          <button
+            key={index}
+            onClick={() => {
+              filterItem(x);
+            }}
+            className="filter-btn"
+          >
+            {x}
+          </button>
+        );
       })}
     </>
   );
