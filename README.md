@@ -177,6 +177,14 @@ const UseEffectBasics = () => {
 
 11. Navbar
 
+- we are creating a basic navbar which changes in small screen
+- for clicking the new button in small screen we can use usestate
+- but this is not user friendly as it's not showing any animation
+- we can use some css and ternary operator to make it user friendly
+- in css we hardcoded the value which can cause some issue when new data added
+- we can use useref to solve this issue
+- we check the height if container and use useref to store the height
+
 #### useContext
 
 12. Modal and Sidebar

@@ -3,7 +3,7 @@ import { FaAngleDoubleRight } from "react-icons/fa";
 
 const url = "https://course-api.com/react-tabs-project";
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
