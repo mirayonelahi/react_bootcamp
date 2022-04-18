@@ -185,13 +185,12 @@ const UseEffectBasics = () => {
 - we can use useref to solve this issue
 - we check the height if container and use useref to store the height
 
-#### useContext
-
-12. Modal and Sidebar
-13. Stripe Menus
-
 #### useReducer and useContext
 
-14. Cart
+12. Modal and Sidebar
+
+13. Stripe Menus
 
 #### React Router
+
+14. Cart
