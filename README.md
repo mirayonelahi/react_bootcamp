@@ -150,12 +150,12 @@ const UseEffectBasics = () => {
 ```
 
 - in the above example we can see that using return / clean up method in useeefect we handle the memory leak in our app.
-- whenever any uffeffect closes it runs clean upfunction
+- whenever any uffeffect closes it runs clean up function
 - when we have conditional rendering where multiple conponents will be there and handling showing/hiding . we will need to handle all the memory leak or unnecessary rendering using clean up function
 - now lets fetch some data.
-- some issue using assync/await inside useEffect dirrectly .
-- as assync/await returns a promise
-- so we create a seperate function for that
+- some issue using async/await inside useEffect directly .
+- as async/await returns a promise
+- so we create a separate function for that
 
 1. Tours
 2. Reviews
@@ -168,6 +168,7 @@ const UseEffectBasics = () => {
 
 - let's make a basic form in react
 - 2 input field and one submit
+- can submit both by onsubmit or by clicking the button
 
 8. Lorem Ipsum Generator
 9. Color Shades Generator
