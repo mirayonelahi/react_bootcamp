@@ -1,12 +1,15 @@
 import "./App.css";
 import TodoDetails from "./TodoDetails";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function App() {
   const url = "https://jsonplaceholder.typicode.com/todos";
 
+  const refContainer = useRef(null);
+
   const [todo, setTodo] = useState([]);
   const [input, setInput] = useState("");
+  const [isEdit, setIsEdit] = useState({ isEdit: false, editId: "" });
 
   const getTodo = async () => {
     const data = await fetch(url);
@@ -23,16 +26,37 @@ function App() {
     );
   };
 
+  const deleteButton = (id) => {
+    setTodo((prevTodo) => prevTodo.filter((todo) => todo.id !== id));
+  };
+
+  const editButton = (id) => {
+    refContainer.current.focus();
+    const findItem = todo.find((singleTodo) => singleTodo.id === id);
+    setInput(findItem.title);
+    setIsEdit({ isEdit: true, editId: id });
+  };
+
   const handleSubmit = () => {
-    setTodo((prevTodo) => [
-      ...prevTodo,
-      {
-        id: todo.length + 1,
-        title: input,
-        completed: false,
-      },
-    ]);
-    setInput("");
+    if (isEdit.isEdit) {
+      setTodo((prevTodo) =>
+        prevTodo.map((todo) =>
+          todo.id === isEdit.editId ? { ...todo, title: input } : todo
+        )
+      );
+      setIsEdit({ isEdit: false, id: "" });
+      setInput("");
+    } else {
+      setTodo((prevTodo) => [
+        ...prevTodo,
+        {
+          id: todo.length + 1,
+          title: input,
+          completed: false,
+        },
+      ]);
+      setInput("");
+    }
   };
 
   useEffect(() => {
@@ -46,6 +70,7 @@ function App() {
       <div>
         <input
           type="text"
+          ref={refContainer}
           onChange={(e) => {
             setInput(e.target.value);
           }}
@@ -54,7 +79,12 @@ function App() {
         <button onClick={handleSubmit}>add</button>
       </div>
 
-      <TodoDetails todos={todo} toggleButton={toggleButton} />
+      <TodoDetails
+        todos={todo}
+        toggleButton={toggleButton}
+        editButton={editButton}
+        deleteButton={deleteButton}
+      />
     </div>
   );
 }

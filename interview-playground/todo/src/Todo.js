@@ -1,8 +1,8 @@
-const Todo = ({ todoList, toggleButton }) => {
+const Todo = ({ todoList, toggleButton, editButton, deleteButton }) => {
   return (
     <>
-      <p>
-        {todoList.title}{" "}
+      <div>
+        <p> {todoList.title}</p>
         <button
           onClick={() => {
             toggleButton(todoList.id);
@@ -10,7 +10,22 @@ const Todo = ({ todoList, toggleButton }) => {
         >
           {todoList.completed ? "✅" : "⛔️"}
         </button>
-      </p>
+        <button
+          onClick={() => {
+            editButton(todoList.id);
+          }}
+        >
+          Edit
+        </button>
+
+        <button
+          onClick={() => {
+            deleteButton(todoList.id);
+          }}
+        >
+          Delete
+        </button>
+      </div>
     </>
   );
 };
