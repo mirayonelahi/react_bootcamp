@@ -1,4 +1,6 @@
-const Todo = ({ todoList, toggleButton, editButton, deleteButton }) => {
+import { useGlobalContext } from "./context";
+const Todo = ({ todoList, editButton, deleteButton }) => {
+  const { toggleButton } = useGlobalContext();
   return (
     <>
       <div>

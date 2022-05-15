@@ -1,13 +1,15 @@
 import "./App.css";
 import TodoDetails from "./TodoDetails";
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useGlobalContext } from "./context";
 
 function App() {
+  const { todo, setTodo } = useGlobalContext();
   const url = "https://jsonplaceholder.typicode.com/todos";
 
   const refContainer = useRef(null);
 
-  const [todo, setTodo] = useState([]);
+  // const [todo, setTodo] = useState([]);
   const [input, setInput] = useState("");
   const [isEdit, setIsEdit] = useState({ isEdit: false, editId: "" });
 
@@ -16,14 +18,6 @@ function App() {
     const response = await data.json();
     const slicedResult = response.slice(0, 9);
     setTodo(slicedResult);
-  };
-
-  const toggleButton = (id) => {
-    setTodo((prevTodo) =>
-      prevTodo.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
   };
 
   const deleteButton = (id) => {
@@ -81,7 +75,6 @@ function App() {
 
       <TodoDetails
         todos={todo}
-        toggleButton={toggleButton}
         editButton={editButton}
         deleteButton={deleteButton}
       />

@@ -1,6 +1,6 @@
 import Todo from "./Todo";
 
-const TodoDetails = ({ todos, toggleButton, editButton, deleteButton }) => {
+const TodoDetails = ({ todos, editButton, deleteButton }) => {
   return (
     <div>
       <div>
@@ -10,7 +10,6 @@ const TodoDetails = ({ todos, toggleButton, editButton, deleteButton }) => {
             <Todo
               key={todo.id}
               todoList={todo}
-              toggleButton={toggleButton}
               editButton={editButton}
               deleteButton={deleteButton}
             />
